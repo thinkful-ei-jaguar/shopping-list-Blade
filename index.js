@@ -1,17 +1,11 @@
 'use strict';
 
-console.log('test1');
-
 //function for adding new items to the list
 
 $('form').submit(function(event) {
   event.preventDefault();
 
-  console.log('test2');
-
   let newItem = $('input').val();
-
-  console.log(newItem);
 
   let newEntry = $(`<li>
   <span class="shopping-item">${newItem}</span>
