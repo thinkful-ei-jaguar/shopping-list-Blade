@@ -23,12 +23,17 @@ $('form').submit(function(event) {
   
   console.log(`added ${newItem}`);
 
+  // Clears the input box after submitting.  Comment out line 28 to keep text.
+
+  $('input:text').val('');
+
 });
 
 //function for the delete button
 
 $('div').on('click', 'button.shopping-item-delete', function(event) {
   event.preventDefault();
+  event.stopPropagation();
   console.log('clicked a delete button');
   $(this).closest('li').remove(); 
   
@@ -40,6 +45,7 @@ $('div').on('click', 'button.shopping-item-delete', function(event) {
 $('div').on('click', 'button.shopping-item-toggle', function(event) {
   console.log('clicked a toggle button');
   event.preventDefault();
+  event.stopPropagation();
   $(this).closest('li').children('span').toggleClass('shopping-item__checked');  
 });
 
